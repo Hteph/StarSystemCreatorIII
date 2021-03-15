@@ -16,6 +16,7 @@ public class OrbitalFacts implements Serializable {
     private BigDecimal orbitalDistance;
     private BigDecimal orbitalEccentricity;
     private BigDecimal orbitalInclination;
+    private BigDecimal orbitalPeriod;
     private char orbitalObjectClass;
 
 }

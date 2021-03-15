@@ -177,7 +177,7 @@ public final class Pagemaker {
         //making the fourth fact pane
         ObservableList<String> climateFacts = FXCollections.observableArrayList("Surface temperature [C]: " + (planet.getSurfaceTemp() - 274.0),
                                                                                 "Orbital Period [Earth Years]: " + planet.getOrbitalPeriod(),
-                                                                                planet.isTidelocked()
+                                                                                planet.isTideLockedStar()
                                                                                         ? "Rotational Period [Earth hours]: "
                                                                                                   + planet.getRotationalPeriod()
                                                                                         : "Planet is Tidelocked, no light changes beyound seasonals.",

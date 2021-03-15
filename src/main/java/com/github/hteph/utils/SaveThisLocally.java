@@ -1,5 +1,8 @@
 package com.github.hteph.utils;
 
+import com.github.hteph.generators.StarFactory;
+import com.github.hteph.generators.StarSystemGenerator;
+import com.github.hteph.repository.objects.Star;
 import com.github.hteph.repository.objects.StellarObject;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

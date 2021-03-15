@@ -1,6 +1,7 @@
 package com.github.hteph.main;
 
 import com.github.hteph.generators.StarFactory;
+import com.github.hteph.generators.StarSystemGenerator;
 import com.github.hteph.repository.CentralRegistry;
 import com.github.hteph.repository.objects.Planet;
 import com.github.hteph.repository.objects.Star;
@@ -38,7 +39,7 @@ public class StartGUI extends Application {
             e2.printStackTrace();
         }
 
-        StellarObject star =  StarFactory.generate("Main", 'A', null);
+        StellarObject star = StarFactory.generate("Main", 'A', null);
 
         ArrayList<StellarObject> systemList = StarSystemGenerator.Generator((Star) star);
 
@@ -49,7 +50,7 @@ public class StartGUI extends Application {
         //Generate GUI--------------------------------------------------------------------------------------
         try {
             Group root = new Group();
-            Scene scene = new Scene(root,800,1000);
+            Scene scene = new Scene(root, 800, 1000);
             primaryStage.setTitle("StarView");
             BorderPane borderPane = new BorderPane();
             borderPane.prefHeightProperty().bind(scene.heightProperty());
@@ -93,24 +94,26 @@ public class StartGUI extends Application {
                     moonTabs.prefHeightProperty().bind(scene.heightProperty());
                     moonTabs.prefWidthProperty().bind(scene.widthProperty());
 
-                    int aNumber=1;
-                    if(thingOrbitingStar instanceof Planet) aNumber +=((Planet) thingOrbitingStar).getMoonList().size();
+                    int aNumber = 1;
+                    if (thingOrbitingStar instanceof Planet) aNumber += ((Planet) thingOrbitingStar).getMoonList().size();
 
                     for (int j = 0; j < aNumber; j++) {
 
                         Tab moon = new Tab();
                         VBox moonbox = new VBox();
-                        if(j==0) {
+                        if (j == 0) {
                             String objectName = thingOrbitingStar.getName();
                             moon.setText(objectName);
                             moonbox.getChildren().add(new Label(objectName));
                             moonbox.getChildren().add(Pagemaker.generator(thingOrbitingStar));
-                        }else {
-                            String objectName = CentralRegistry.getFromArchive(((Planet) thingOrbitingStar).getMoonList().get(j-1)).getName();
+                        } else {
+                            String objectName = CentralRegistry.getFromArchive(((Planet) thingOrbitingStar).getMoonList().get(j - 1)).getName();
                             moon.setText(objectName);
                             moonbox.getChildren().add(new Label(objectName));
 
-                            moonbox.getChildren().add(Pagemaker.generator(CentralRegistry.getFromArchive(((Planet) thingOrbitingStar).getMoonList().get(j-1))));
+                            moonbox.getChildren()
+                                   .add(Pagemaker.generator(CentralRegistry.getFromArchive(((Planet) thingOrbitingStar)
+                                                                                                                 .getMoonList().get(j - 1))));
                         }
 
                         //Utility box
@@ -152,7 +155,7 @@ public class StartGUI extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

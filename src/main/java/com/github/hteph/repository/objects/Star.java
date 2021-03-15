@@ -3,6 +3,7 @@ package com.github.hteph.repository.objects;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Singular;
 import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
@@ -28,4 +29,7 @@ public class Star extends StellarObject {
         return "Star: " + getName() + " (" + classification + ")";
     }
 
+    public void addOrbitalObject(String orbitalObject){
+        orbitalObjects.add(orbitalObject);
+    }
 }

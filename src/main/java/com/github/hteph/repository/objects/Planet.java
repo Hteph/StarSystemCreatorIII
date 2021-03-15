@@ -18,16 +18,19 @@ public class Planet extends  StellarObject {
     private static final long serialVersionUID = 1L;
 
     private OrbitalFacts orbitalFacts;
+
     private BigDecimal mass;
     private int radius;
     private BigDecimal gravity;
     private BigDecimal density;
-    private BigDecimal orbitalPeriod;
     private BigDecimal axialTilt;
-    private boolean tidelocked;
+
+    private boolean tideLockedStar;
     private BigDecimal rotationalPeriod;
     private String tectonicCore;
     private BigDecimal magneticField;
+    private String tectonicActivityGroup;
+
    private HydrosphereDescription hydrosphereDescription;
     private int hydrosphere;
    private Set<AtmosphericGases> atmosphericComposition;
@@ -38,15 +41,18 @@ public class Planet extends  StellarObject {
     private int[] rangeBandTempWinter;
     private BigDecimal nightTempMod;
     private BigDecimal dayTempMod;
-    private String tectonicActivityGroup;
-    private BigDecimal orbitalInclination;
     private boolean boilingAtmo;
+
+
     private List<String> moonList;
+
     private BigDecimal lunarTidal;
     private boolean planetLocked;
     private BigDecimal lunarOrbitalPeriod;
     private BigDecimal lunarOrbitDistance; //in planetRadii
+
     private String classificationName;
+
    private Breathing lifeType;
 
     public String getAtmosphericCompositionParsed() {
@@ -60,5 +66,4 @@ public class Planet extends  StellarObject {
                        + ", hydrosphereDescription=" + "something"  +", hydro%=" + hydrosphere + ", pressure="
                        + atmoPressure + ",\n surfaceTemp=" + surfaceTemp + ", lifeType="  + "\n Atmo" + "Atmo";
     }
-
 }
