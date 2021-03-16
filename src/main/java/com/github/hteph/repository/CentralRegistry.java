@@ -5,6 +5,8 @@ import com.github.hteph.repository.objects.StellarObject;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +18,8 @@ public class CentralRegistry {
 
     public static String putInArchive(StellarObject something){
 
-        if(something.getArchiveID().isEmpty()) return null;
+        if(something.getArchiveID().isEmpty()) something.setArchiveID("Unknown"+ BigDecimal.valueOf(100000*Math.random())
+                                                                                           .round(new MathContext(6)));
 
         //TODO more verification and such stuff are needed
 

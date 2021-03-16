@@ -5,14 +5,16 @@ import com.github.hteph.utils.enums.Breathing;
 import com.github.hteph.utils.enums.HydrosphereDescription;
 import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Data
-@Builder
+@SuperBuilder
 public class Planet extends  StellarObject {
 
     private static final long serialVersionUID = 1L;
@@ -43,7 +45,6 @@ public class Planet extends  StellarObject {
     private BigDecimal dayTempMod;
     private boolean boilingAtmo;
 
-
     private List<String> moonList;
 
     private BigDecimal lunarTidal;
@@ -57,7 +58,7 @@ public class Planet extends  StellarObject {
 
     public String getAtmosphericCompositionParsed() {
 
-        return atmosphericComposition.stream().map(AtmosphericGases::toString).collect(Collectors.joining(" "));
+        return atmosphericComposition.stream().map(AtmosphericGases::toString).collect(Collectors.joining(", "));
     }
 
     @Override

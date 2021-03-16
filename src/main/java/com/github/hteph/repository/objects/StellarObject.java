@@ -16,4 +16,7 @@ public abstract class StellarObject implements Serializable{
 	private String description;
 	private String archiveID;
 	private OrbitalFacts orbitalFacts;
+
+	protected StellarObject() {
+	}
 }

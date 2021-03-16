@@ -17,7 +17,6 @@ import java.util.Arrays;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class StarFactory {
 
-    //Method --------------------------------------------------------------------
     public static StellarObject generate(String systemName, char systemPosition, Star star) {
 
         NameGenerator randomNameGenerator = null;
@@ -25,7 +24,7 @@ public final class StarFactory {
             randomNameGenerator = new NameGenerator("RomanNames");
         } catch (IOException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            log.info("Name generation failure", e);
         }
 
         double mass = generateMass();
