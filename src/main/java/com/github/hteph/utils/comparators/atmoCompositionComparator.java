@@ -1,7 +1,5 @@
 package com.github.hteph.utils.comparators;
 
-import com.github.hteph.repository.AtmosphericGases;
-
 import java.io.Serializable;
 import java.util.Comparator;
 

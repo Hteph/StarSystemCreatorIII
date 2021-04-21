@@ -11,11 +11,12 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 @Data
 @SuperBuilder
-public class Planet extends  StellarObject {
+public class Planet extends StellarObject {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,17 +34,18 @@ public class Planet extends  StellarObject {
     private BigDecimal magneticField;
     private String tectonicActivityGroup;
 
-   private HydrosphereDescription hydrosphereDescription;
+    private HydrosphereDescription hydrosphereDescription;
     private int hydrosphere;
-   private Set<AtmosphericGases> atmosphericComposition;
+    private Set<AtmosphericGases> atmosphericComposition;
     private BigDecimal atmoPressure;
-    private int surfaceTemp;
-    private int[] rangeBandTemperature;
-    private int[] rangeBandTempSummer;
-    private int[] rangeBandTempWinter;
-    private BigDecimal nightTempMod;
-    private BigDecimal dayTempMod;
     private boolean boilingAtmo;
+    private TemperatureFacts temperatureFacts;
+//    private int surfaceTemp;
+//    private int[] rangeBandTemperature;
+//    private int[] rangeBandTempSummer;
+//    private int[] rangeBandTempWinter;
+//    private BigDecimal nightTempMod;
+//    private BigDecimal dayTempMod;
 
     private List<String> moonList;
 
@@ -54,7 +56,7 @@ public class Planet extends  StellarObject {
 
     private String classificationName;
 
-   private Breathing lifeType;
+    private Breathing lifeType;
 
     public String getAtmosphericCompositionParsed() {
 
@@ -64,7 +66,7 @@ public class Planet extends  StellarObject {
     @Override
     public String toString() {
         return "Planet " + super.getName() + ": " + super.getDescription() + ", radius=" + radius
-                       + ", hydrosphereDescription=" + "something"  +", hydro%=" + hydrosphere + ", pressure="
-                       + atmoPressure + ",\n surfaceTemp=" + surfaceTemp + ", lifeType="  + "\n Atmo" + "Atmo";
+                + ", hydrosphereDescription=" + "something" + ", hydro%=" + hydrosphere + ", pressure="
+                + atmoPressure + ",\n surfaceTemp=" + temperatureFacts.getSurfaceTemp() + ", lifeType=" + "\n Atmo" + "Atmo";
     }
 }

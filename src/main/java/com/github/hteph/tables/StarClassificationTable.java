@@ -10,7 +10,7 @@ public class StarClassificationTable {
     private final static TreeMap<Integer, String> map = new TreeMap<>();
 
     static {
-        map.put(60000,"X");
+        map.put(60000,"X"); //This should be implemented as some special case, a black hole etc
         map.put(30000, "O");
         map.put(10000, "B");
         map.put(7500, "A");

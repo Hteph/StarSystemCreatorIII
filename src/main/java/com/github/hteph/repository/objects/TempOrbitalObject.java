@@ -1,5 +1,10 @@
 package com.github.hteph.repository.objects;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class TempOrbitalObject {
 
         private double orbitDistance;
@@ -9,18 +14,5 @@ public class TempOrbitalObject {
             this.orbitDistance = orbitDistance;
             this.orbitObject = '-';
         }
-
-    public double getOrbitDistance() {
-        return orbitDistance;
-    }
-
-    public char getOrbitObject() {
-        return orbitObject;
-    }
-
-    public void setOrbitObject(char orbitObject) {
-        this.orbitObject = orbitObject;
-    }
-
 
 }
